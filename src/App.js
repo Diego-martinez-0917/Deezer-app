@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import React, { useEffect} from 'react';
+import { BrowserRouter as Router, Switch, Route, Redirect, useHistory} from "react-router-dom";
+import Main from "./pages/Main";
+import Header from './pages/header';
+import Landing from './pages/LandingPage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function PrivateRoute(props){
+  const history = useHistory()
+  useEffect(()=>{
+    const token = localStorage.getItem("token")
+    if(token === 'undefined'){
+      history.push("/")
+    }
+  },[])
+  return(
+    <Route  {...props}></Route>
+  )
 }
 
-export default App;
+export default function App() {
+
+  return (
+    <Router>
+      <div className="App">       
+        <Header/>
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <PrivateRoute exact path="/main" component={Main} />
+          <Redirect from="*" to="/main" />
+        </Switch>      
+      </div>
+    </Router>
+  );
+}

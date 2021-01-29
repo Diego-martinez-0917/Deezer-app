@@ -1,0 +1,167 @@
+.App {
+  
+  .navbar{
+   display: flex;
+   justify-content: space-between;
+   box-shadow: 1px 3px 7px rgba(0, 0, 0, 0.337) ;
+   border-bottom-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+
+   .logo{
+     height: 47px;
+     margin-left: 10px;
+     @media (max-width: 768px) {
+       height: 30px;
+     }
+   }
+  }
+
+  .container-landing{
+    max-width: 100%;
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'car img';
+    gap: 20px;
+
+    .card-landing{
+      max-width: 35vw;
+      justify-self: end;
+      align-self: center;
+      height: min-content;
+      grid-area: car;
+
+      .card-title{
+        font-size:3rem;
+        font-family: Bradley Hand, cursive;
+      }
+
+      .card-subtitle{
+        font-size: 2rem;
+        font-family: Bradley Hand, cursive;
+      }
+    }
+
+    .imagen-landing{
+      width: 60vw;
+      max-height: 85vh;
+      margin-top: 1.5vh;
+      margin-right: 1.5vw;
+      border-radius: 20px;
+      grid-area: img;
+      justify-self: end;
+    }
+    @media (max-width: 1024px) {
+      .card-landing{
+        .card-title{
+          font-size:2.5rem;
+        }
+
+        .card-subtitle{
+          font-size: 1.5rem;
+        }
+      }
+    }
+    
+  }
+  @media (max-width: 768px) {
+    .container-landing{
+      grid-template-areas: 'car car';
+      .card-landing{
+        justify-self: center;
+        max-width: 70vw;
+        .card-title{
+          font-size: 2rem;
+        }
+        .card-subtitle{
+          font-size: 1rem;
+        }
+      }
+      .imagen-landing{
+        display: none;
+      }
+    }  
+      
+  }
+
+  
+
+  .main-container{
+    min-width: 90vw;
+    min-height: 70vh;
+    margin-top: 1.5vh;
+    justify-content: center;
+    display: inline-flexbox;
+
+    .form-content{
+      padding: 15px;
+      .input-buttom{
+        display: grid;
+        grid-template-columns: 1fr min-content;
+        gap: 20px;
+
+        .bt-search{
+          height: min-content;
+          width: 5vw;
+          min-width: 50px;
+        }
+
+      }
+    }
+
+    .main-content{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      padding: 10px;
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2,1fr);
+      }
+      .card-info{
+        .card-header .card-title{
+          margin-bottom: 0px;
+          font-size: xx-large;
+          font-family: Bradley Hand, cursive;
+        }
+
+        .card-body {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(6, min-content);
+          gap: 10px;
+          grid-template-areas:  'img tialb'
+                                'img tealb'
+                                'img tifan'
+                                'img tefan'
+                                'badrad .'
+                                'telink telink';
+        @media (max-width: 425px) {
+          grid-template-areas:  'img img'
+                                'tialb tealb'
+                                'tifan tefan'
+                                'badrad badrad'
+                                'telink telink';
+        }
+          .image-artist{
+            grid-area: img;
+            border-radius: 50px;
+            justify-self: center;
+            align-self: center;
+            @media (max-width: 768px) {
+              width: 200px;
+            }
+          }
+          .title-album{grid-area: tialb;}
+          .text-album{grid-area: tealb;}
+          .title-fans{grid-area: tifan;}
+          .text-fans{grid-area: tefan;}
+          .badge-radio{grid-area: badrad;}
+          .text-link{grid-area: telink;}
+        }
+      }
+    }
+  }
+}
+
+
