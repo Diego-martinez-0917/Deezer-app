@@ -11,7 +11,7 @@ function PrivateRoute(props){
     const token = localStorage.getItem("token")
     if(token === 'undefined'){
       history.push("/")
-    }
+    }// eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   return(
     <Route  {...props}></Route>

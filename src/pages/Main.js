@@ -21,6 +21,7 @@ export default function Main (props) {
           console.dir(err)
           swal("error", `${err.message}`, "error")
         })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
   return (

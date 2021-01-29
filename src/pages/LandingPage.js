@@ -7,6 +7,7 @@ export default function Landing() {
   const token = localStorage.getItem("token")
   useEffect(()=>{
     if(token !== 'undefined') history.push('/main')
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   return (
     <div className='container-landing'>
