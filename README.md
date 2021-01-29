@@ -14,4 +14,6 @@ Este proyecto se puede ejecutar con el comando:
 
 En este proyecto se puede iniciar sesion con su cuenta Deezer, una vez dentro de la aplicacion podra buscar a sus artistas favoritos y comentar sobre ellos y tambien podra eliminar los comentarios que haga.
 
+Este proyecto se encuenta en despliegue continuo(Continuous deployment) con vercel [Deezer app](https://deezer-app.vercel.app/)
+
 ![Screen](/public/Screenshow.jpg)
